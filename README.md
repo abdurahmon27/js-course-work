@@ -1,3 +1,5 @@
+# it doesn't work at all. problem with api. Don't have time to finish it.
+
 # Fundamentals of Web Development Final Project
 
 ## Task Requirements
