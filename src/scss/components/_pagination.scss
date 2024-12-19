@@ -1,0 +1,27 @@
+
+@use '../base/variables' as *;
+
+.pagination {
+  @include flex-center;
+  margin-top: 2rem;
+  gap: 1rem;
+  
+  .pagination-btn {
+    background-color: $color-light;
+    color: $color-dark;
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    &.active {
+      background-color: $color-primary;
+      color: white;
+    }
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+$color-primary: #3498db;
+$color-secondary: #2ecc71;
+$color-dark: #2c3e50;
+$color-light: #ecf0f1;
+$color-accent: #e74c3c;
+
+
+@use "sass:color";
+
+$color-primary-light: color.scale($color-primary, $lightness: 10%);
+$color-primary-dark: color.scale($color-primary, $lightness: -10%);
+$color-secondary-light: color.scale($color-secondary, $lightness: 10%);
+$color-secondary-dark: color.scale($color-secondary, $lightness: -10%);
+
+$font-primary: "Arial", sans-serif;
+$font-secondary: "Helvetica", sans-serif;
+$font-size-base: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 2rem;
+
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 3rem;
+
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+$breakpoint-large: 1200px;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive-text($mobile-size, $desktop-size) {
+  font-size: $mobile-size;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $desktop-size;
+  }
+}
+
+@mixin grid-responsive($mobile-columns, $desktop-columns) {
+  display: grid;
+  grid-template-columns: repeat($mobile-columns, 1fr);
+  gap: 1rem;
+
+  @media (min-width: $breakpoint-tablet) {
+    & {
+      grid-template-columns: repeat($desktop-columns, 1fr);
+      gap: 2rem;
+    }
+  }
+}
+
+@mixin hover-effect {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+
+$box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.2);
+$box-shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+$transition-fast: 0.2s ease-in-out;
+$transition-medium: 0.3s ease-in-out;
+$transition-slow: 0.5s ease-in-out;
+
+$z-index-low: 10;
+$z-index-medium: 100;
+$z-index-high: 1000;
+$z-index-modal: 1100;

@@ -1,0 +1,42 @@
+{
+  "name": "couse-work-js",
+  "version": "1.0.0",
+  "description": "Course work for JS",
+  "author": {
+    "name": "Raxmon Mamadiyorov | bekzotovich.uz",
+    "email": "bekzotovich12@gmail.com"
+  },
+  "scripts": {
+    "start": "npx http-server ./dist",
+    "build:html": "node -e \"require('fs').cpSync('src/html', 'dist', { recursive: true });\"",
+    "clean": "rm -rf dist/* || true",
+    "build:scss": "sass src/scss:dist/css --source-map",
+    "build:js": "webpack",
+    "build": "npm run clean && npm run build:html && npm run build:scss && npm run build:js",
+    "watch:scss": "sass --watch src/scss:dist/css",
+    "watch:js": "babel src/js --watch --out-dir dist/js",
+    "watch": "concurrently \"npm run watch:scss\" \"npm run watch:js\"",
+    "lint:js": "eslint src/js",
+    "lint:scss": "stylelint src/scss",
+    "test": "cd ./test && npm run test",
+    "postinstall": "cd ./test && npm i || true",
+    "build:autocode": "echo \"Dummy build script for Autocode\""
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.4",
+    "@babel/preset-env": "^7.23.4",
+    "concurrently": "^9.1.0",
+    "eslint": "^8.56.0",
+    "http-server": "^14.1.1",
+    "jest": "^29.7.0",
+    "sass": "^1.82.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "babel-loader": "^9.2.1"
+  }
+}

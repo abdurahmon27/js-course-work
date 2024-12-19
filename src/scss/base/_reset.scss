@@ -1,0 +1,49 @@
+@use "variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  line-height: 1.6;
+  color: $color-dark;
+  background-color: $color-light;
+}
+
+a {
+  text-decoration: none;
+  color: $color-primary;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: $color-primary;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  @include hover-effect;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0.5rem 1rem;
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

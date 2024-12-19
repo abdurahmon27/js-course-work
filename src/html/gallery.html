@@ -1,0 +1,46 @@
+<!-- src/html/gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application - Gallery</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="nav-link">Home</a>
+            <a href="/gallery.html" class="nav-link active">Gallery</a>
+            <a href="/contacts.html" class="nav-link">Contacts</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-section">
+            <h1>Image Gallery</h1>
+            
+            <div class="gallery-controls">
+                <input type="text" id="search-input" placeholder="Search images...">
+                <button id="search-button">Search</button>
+            </div>
+
+            <div id="error-container" class="error-message"></div>
+            
+            <div id="gallery-container" class="gallery-grid">
+                <!-- Gallery items will be dynamically inserted here -->
+            </div>
+
+            <div id="pagination-container" class="pagination">
+                <!-- Pagination buttons will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Web Application. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

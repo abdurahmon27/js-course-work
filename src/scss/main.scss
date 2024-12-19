@@ -1,0 +1,16 @@
+// Base
+@use "base/reset";
+@use "base/variables";
+
+// Layout
+@use "layout/header";
+@use "layout/footer";
+
+// Components
+@use "components/navigation";
+@use "components/gallery";
+@use "components/pagination";
+
+// Pages
+@use "pages/home";
+@use "pages/contact";
